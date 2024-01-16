@@ -59,22 +59,25 @@ class Robot:
         return etat
 
 # Exemple d'utilisation
-def main():
-    mon_robot = Robot("ROB")
 
-    mon_robot.allumer()
 
-    mon_robot.enregistrer_vitesse(5)  # Enregistre une vitesse de déplacement de 5
-
-    mon_robot.charger_batterie(100)
-
-    mon_robot.arreter_deplacement()
-
-    print(mon_robot.etat_global())
-
-    mon_robot.eteindre()
 
 if __name__ == "__main__":
+    def main():
+        mon_robot = Robot("ROB")
+
+        mon_robot.allumer()
+
+        mon_robot.enregistrer_vitesse(5)  # Enregistre une vitesse de déplacement de 5
+
+        mon_robot.charger_batterie(100)
+
+        mon_robot.arreter_deplacement()
+
+        print(mon_robot.etat_global())
+
+        mon_robot.eteindre()
+
     main()
 
     
