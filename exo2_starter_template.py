@@ -22,9 +22,14 @@ class Cyborg(Robot, Human):
     def __init__(self, nom, sexe):
         Robot.__init__(self, nom)
         Human.__init__(self, sexe)
+    
+    # Méthode fun au Cyborg
+    def faire_la_danse_du_robot(self):
+        print(f'{self.nom} est en train de danser la danse du robot !')
 
 
 if __name__ == "__main__":
+
     cyborg1 = Cyborg('Patrick', 'Homme')
 
     print(cyborg1.nom, 'sexe', cyborg1.sexe)
@@ -34,3 +39,5 @@ if __name__ == "__main__":
     cyborg1.miam(['coca', 'chips'])
     print(cyborg1.estomac)
     cyborg1.digest()
+
+    cyborg1.faire_la_danse_du_robot()
