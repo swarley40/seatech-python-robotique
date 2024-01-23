@@ -1,42 +1,66 @@
 from abc import ABCMeta, abstractmethod
 
-# You can use classes below or create your own 👍️
 
 class UnmannedVehicle(metaclass=ABCMeta):
-    """ 
-        An autonomous vehicle have to do his mission automatically.
-        This mission can be configured by an operator.
-    """
+    @abstractmethod
+    def mission(self):
+        pass
 
-class AerialVehicle(metaclass=ABCMeta):
-    """ A vehicle made for ground fields."""
 
-class GroundVehicle(metaclass=ABCMeta):
-    """ A vehicle made for ground fields."""
+class AerialVehicle(UnmannedVehicle, metaclass=ABCMeta):
+    @abstractmethod
+    def avion(self):
+        pass
 
-class UnderseaVehicle(metaclass=ABCMeta):
-    """ A vehicle made for ground fields."""
 
-class UAV():
-    """Unmanned Aerial Vehicle"""
+class GroundVehicle(UnmannedVehicle, metaclass=ABCMeta):
+    @abstractmethod
+    def voiture(self):
+        pass
 
-class UUV():
-    """Unmanned Undersea Vehicle"""
 
-class UGV():
-    """Unmanned Ground Vehicle"""
+class UnderwaterVehicle(UnmannedVehicle, metaclass=ABCMeta):
+    @abstractmethod
+    def bateau(self):
+        pass
 
+
+class UAV(AerialVehicle):
+    def mission(self):
+        print("Il faut décoller")
+
+    def avion(self):
+        print("Je voooooooole !!!!")
+
+
+class UGV(GroundVehicle):
+    def mission(self):
+        print("Il faut aller à l'aéroport")
+
+    def voiture(self):
+        print("Vroooum vroouuum")
+
+
+class UUV(UnderwaterVehicle):
+    def mission(self):
+        print("Il faut explorer les profondeur de l'antarctique")
+
+    def bateau(self):
+        print("JE SUIS TOM ET JE SUIS SOUS L'EAU AHAHAHAHAHAHAHAH$")
 
 if __name__ == '__main__':
+
     uav = UAV()
-    uav.do_something_interesting()
-    uav.do_something_aerial_specific()
+    uav.mission()
+    uav.avion()
+
 
     ugv = UGV()
-    ugv.do_something_interesting()
-    ugv.do_something_ground_specific()
+    ugv.mission()
+    ugv.voiture()
 
     uuv = UUV()
-    uuv.do_something_interesting()
-    uuv.do_something_undersea_specific()
+    uuv.mission()
+    uuv.bateau()
+
 
