@@ -23,9 +23,9 @@ class Cyborg(Robot, Human):
         Robot.__init__(self, nom)
         Human.__init__(self, sexe)
     
-    # Méthode fun au Cyborg
+    # Méthode fun
     def faire_la_danse_du_robot(self):
-        print(f'{self.nom} est en train de danser la danse du robot !')
+        print(f'{self.nom} est en train de faire la danse du robot !')
 
 
 if __name__ == "__main__":
